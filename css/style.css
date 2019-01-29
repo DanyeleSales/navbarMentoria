@@ -1,0 +1,109 @@
+body{
+    margin: 0;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+/* header */
+.header{
+    background: #cccccc;
+}
+.container{
+    width: 80%; /*define o tamanho do container*/
+    margin: 0 auto; /*centraliza o conteúdo*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    margin: 0 0 0 -36px;
+}
+.logo>a{
+    display: block;
+    text-indent: -999999px;  /*esconde o texto do h1*/
+    background: url(../assets/header-01.png);
+    width: 190px;
+    height: 85px;
+    background-size: contain;
+    background-position: center;
+}
+.nav-primary{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-primary ul{
+    padding: 0;
+    list-style: none;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.nav-primary ul li + li{ /*seleciona a li que tem uma li antes dela*/
+    margin-left: 20px;
+}
+.list-content a {
+    text-transform: uppercase;
+}
+
+.btn-mobile{
+    display: none;
+    height: 50px;
+    width: 50px;
+    background: none;
+    border: 1px solid white;
+    border-radius: 3px;
+}
+
+.btn-mobile span {
+    width: 100%;
+    height: 3px;
+    background: white;
+    display: block;
+}
+
+.btn-mobile span + span{
+    margin-top: 8px;
+}
+/* media queries */
+@media screen and (max-width: 768px) {
+    .header{
+        position: relative;
+    }
+    .nav-primary{
+        /* display: none; */
+        position: absolute;
+        top: 85px;
+        left: 0;
+        flex-direction: column;
+        align-items: center;
+        background: #eae8e8;
+    }
+
+    .nav-primary .list-content li + li{
+        margin-left: 0;
+        margin-top: 30px;
+    }
+
+    .nav-primary .list-content{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-primary.is-visible{ /*classe que aparece a nav no mobile*/
+        display: flex;
+        /* position: absolute;
+        top: 85px;
+        left: 0;
+        flex-direction: column;
+        align-items: center;
+        background: #eae8e8; */
+    }
+
+    .btn-mobile{
+        display: block;
+    }
+}

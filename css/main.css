@@ -1,0 +1,123 @@
+body{
+    margin: 0;
+    overflow-y: hidden;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+/* header */
+.header{
+    background: #AD3550;
+}
+.container{
+    width: 80%; 
+    margin: 0 auto; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    margin: 0 0 0 -36px;
+    margin: 9px;
+}
+.logo>a{
+    display: block;
+    text-indent: -999999px;
+    background: url(../assets/book.svg);
+    width: 174px;
+    height: 85px;    
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.nav-primary{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.nav-primary ul {
+    padding: 0;
+    list-style: none;
+    width: 92%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.nav-primary ul li + li{ /*seleciona a li que tem uma li antes dela*/
+    margin-left: 20px;
+}
+.nav-row{
+    border-left: 1px solid black;
+    display: block;
+    height: 14px;
+}
+.list-content a {
+    text-transform: uppercase;
+}
+.btn-mobile{
+    display: none;
+    height: 50px;
+    width: 50px;
+    background: none;
+    border: 1px solid white;
+    border-radius: 3px;
+}
+.btn-mobile span {
+    width: 100%;
+    height: 3px;
+    background: white;
+    display: block;
+}
+.btn-mobile span + span{
+    margin-top: 8px;
+}
+/* media queries */
+@media screen and (max-width: 768px) {
+    ul{
+        display: flex;
+        justify-content: center;
+    }
+    li{
+        margin: 0 5px;
+    }
+    .list-content li{
+        padding: 7px;
+    }
+    .header{
+        position: relative;
+    }
+    .logo a {
+        width: 109px;
+        height: 77px;
+    }
+    .nav-row{
+        display: none;
+    }
+    .nav-primary{
+        opacity: 0;        
+        position: absolute;
+        top: 95px;
+        right: -100%;        
+        flex-direction: column;
+        align-items: center;     
+        transition: 0.5s;
+        background: rgb(214, 117, 138);
+    }
+    .nav-primary .list-content li + li{
+        margin-left: 0;
+        margin-top: 30px;
+    }
+    .nav-primary .list-content{
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-primary.is-visible{ /*classe que aparece a nav no mobile*/
+        opacity: 1;
+        right: 0;
+        transition: 0.5s,
+    }
+    .btn-mobile{
+        display: block;
+    }
+}
