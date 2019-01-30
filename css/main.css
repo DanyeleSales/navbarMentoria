@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 }
 a {
     color: black;
@@ -72,14 +72,6 @@ a {
     margin-top: 8px;
 }
 
-.imageAutoConhecimento{
-    width: 100%;
-    height: 70vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
 .wrapper{
     display: flex;
     justify-content: center;
@@ -110,6 +102,17 @@ a {
     width: 33px;
     border-radius: 50px;    
     padding: 9px;
+}
+.bannerSelfKnowledge{
+    background-image: url(../assets/autoconhecimento.jpg);
+    width: 100%;
+    height: 70vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.description{
+    margin: 0;
 }
 /* media queries */
 @media screen and (max-width: 768px) {
